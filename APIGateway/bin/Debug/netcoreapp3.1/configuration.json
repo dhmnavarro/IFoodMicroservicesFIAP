@@ -1,0 +1,65 @@
+{
+    "ReRoutes": [
+        {
+            "DownstreamPathTemplate": "/api/Pedido",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 56815
+                }
+            ],
+            "UpstreamPathTemplate": "/api/Pedido",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Estabelecimento",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 56815
+                }
+            ],
+            "UpstreamPathTemplate": "/api/Estabelecimento",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        },
+        {
+            "DownstreamPathTemplate": "/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "pedido",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/pedido/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        },
+        {
+            "DownstreamPathTemplate": "/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "catalogo",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/catalogo/",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        },
+        {
+            "DownstreamPathTemplate": "/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "catalogo",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/catalogo/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        }
+    ],
+    "GlobalConfiguration": {}
+}
